@@ -1,4 +1,4 @@
-import style from "./doutor.module.css"
+import style from "./page.module.css"
 
 export default function sobre() {
     return(
