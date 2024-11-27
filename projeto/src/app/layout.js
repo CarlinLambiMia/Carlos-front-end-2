@@ -1,22 +1,21 @@
-//import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/Header"
+import Header from "@/components/Header";
+import React from "react";
 
 export const metadata = {
-  title: "Minha primeira aplicação",
-  description: "Aplicação de front-end II",
-  charset:'utf-8',
-  author:'Carlos Eduardo',
-  keywords:'Html, Css, JavaScript, React, Next.js',
+  title: "Atividade Header",
+  description: "Algo",
+  charset: 'UTF-8',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-BR">
       <body>
         <Header />
         {children}
       </body>
+
     </html>
   );
 }
