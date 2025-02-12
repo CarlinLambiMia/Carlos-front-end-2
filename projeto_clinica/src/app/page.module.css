@@ -2,13 +2,16 @@
   background-image: url(../../public/images/home.png);
   background-size: cover;
   display: flex;
+  width: 100vw;
   z-index: -1;
 }
 
-.campoParagrafo{
+.campoParagrafo {
+  font-family: "Inter", serif;
+  color: black;
   width: 48%;
   text-align: center;
   position: relative;
-  left: 10%;
-  margin-top: 17%;
+  left: 11%;
+  margin-top: 19%;
 }
