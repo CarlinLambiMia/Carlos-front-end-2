@@ -1,85 +1,101 @@
 'use client'
 import React, { useState, useEffect } from "react";
-const urlPadrao = "https://api-clinica-2a.onrender.com";
 import styles from "./medicos.module.css";
 import { X } from "lucide-react";
 
-export default function medicos() {
+const urlPadrao = "https://api-clinica-2a.onrender.com";
+
+export default function Medicos() {
     const [medicos, setMedicos] = useState([]);
     const [medicosPorNome, setMedicosPorNome] = useState([]);
     const [showListaDePesquisa, setShowListaDePesquisa] = useState(false);
+    const [termoPesquisa, setTermoPesquisa] = useState("");
 
-    async function apresetarTodosMedicos() {
+    //todos os médicos
+    async function buscarTodosMedicos() {
         try {
-            const response = await fetch(`${urlPadrao}/medicos`)
+            const response = await fetch(`${urlPadrao}/medicos`);
             if (!response.ok) {
-                throw new Error("Erro ao buscar dados:" + response.statusText);
-
+                throw new Error("Erro ao buscar dados: " + response.statusText);
             }
             const data = await response.json();
             setMedicos(data);
-
         } catch (error) {
-            console.log('Ocorreu algum erro:' + error)
+            console.error("Ocorreu um erro ao buscar médicos:", error);
         }
     }
 
+    // médicos por nome
     async function pesquisarMedicoPorNome(nome) {
-
         try {
-            const response = await fetch(`${urlPadrao}/medicos?nome=${nome}`)
+            const response = await fetch(`${urlPadrao}/medicos?nome=${nome}`);
             if (!response.ok) {
-                throw new Error("Erro ao buscar dados:" + response.statusText);
-
+                throw new Error("Erro ao buscar dados: " + response.statusText);
             }
             const data = await response.json();
             setMedicosPorNome(data);
-
         } catch (error) {
-            console.log('Ocorreu algum erro:' + error)
+            console.error("Ocorreu um erro ao pesquisar médicos:", error);
         }
     }
 
     useEffect(() => {
-        apresetarTodosMedicos();
-        pesquisarMedicoPorNome('')
-        if (showListaDePesquisa) {
-            document.body.classList.add("no-scroll");
+        buscarTodosMedicos();
+    }, []);
+
+    useEffect(() => {
+        if (termoPesquisa) {
+            pesquisarMedicoPorNome(termoPesquisa);
         } else {
-            document.body.classList.remove("no-scroll");
+            setMedicosPorNome([]);
         }
-    }, [showListaDePesquisa]);
+    }, [termoPesquisa]);
 
     return (
         <div className={styles.container}>
-            <div className={styles.h1}> Lista de médicos</div>
+            <h1 className={styles.h1}>Lista de Médicos</h1>
+
             <div className={styles.containerPesquisa}>
-                <button className={styles.botaoPesquisar} onClick={() => { setShowListaDePesquisa(!showListaDePesquisa) }}>Búscar médico</button>
-                {
-                    showListaDePesquisa &&
+                <button
+                    className={styles.botaoPesquisar}
+                    onClick={() => setShowListaDePesquisa(!showListaDePesquisa)}
+                >
+                    Búscar médico
+                </button>
+
+                {showListaDePesquisa && (
                     <div className={styles.containerListaPesquisa}>
                         <div className={styles.containerInputELista}>
                             <div className={styles.containerInput}>
-                                <button onClick={() => { setShowListaDePesquisa(!showListaDePesquisa) }} className={styles.botaoFechar}><X className={styles.iconeFechar} size={20} /></button>
+                                <button
+                                    onClick={() => setShowListaDePesquisa(false)}
+                                    className={styles.botaoFechar}
+                                >
+                                    <X className={styles.iconeFechar} size={20} />
+                                </button>
                                 <input
                                     type="text"
-                                    onChange={(e) => pesquisarMedicoPorNome(e.target.value)}
+                                    value={termoPesquisa}
+                                    onChange={(e) => setTermoPesquisa(e.target.value)}
                                     placeholder="Pesquisar médico"
                                     className={styles.input}
-                                    onInput={(e) => e.target.value = e.target.value.replace(/['"]/g, '')}
                                 />
                             </div>
+
                             <div className={styles.containerLista}>
                                 <ul className={styles.listaPesquisa}>
                                     {medicosPorNome.map((medico) => (
-                                        <li className={styles.linhaListaPesquisa} key={medico.id}>{medico.nome}</li>
+                                        <li className={styles.linhaListaPesquisa} key={medico.id}>
+                                            {medico.nome}
+                                        </li>
                                     ))}
                                 </ul>
                             </div>
                         </div>
                     </div>
-                }
+                )}
             </div>
+
             <div className={styles.tabelaContainer}>
                 <table className={styles.tabela}>
                     <thead className={styles.cabecalho}>
