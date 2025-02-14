@@ -21,6 +21,7 @@ main{
   width: 100%;
   flex: 1;
   display: flex;
+  z-index: -1;
 }
 
 footer{

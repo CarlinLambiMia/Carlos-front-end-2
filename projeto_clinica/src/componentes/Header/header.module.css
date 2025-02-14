@@ -24,6 +24,7 @@
     display: flex;
     background-color: #8B8B8B;
     padding: 0.5%;
+    z-index: 9999;
 }
 
 .headerLi {
@@ -54,10 +55,6 @@
 
 .opcaoHeader:hover{
     color: black;
-}
-
-.botao {
-    
 }
 
 @media screen and (max-width: 450px) {
