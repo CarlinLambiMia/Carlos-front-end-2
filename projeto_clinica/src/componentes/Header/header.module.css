@@ -1,9 +1,3 @@
-.header {
-    box-sizing: border-box;
-    box-shadow: rgba(0, 0, 0, 0.082) 0px 19px 38px;
-    color: #000000;
-}
-
 .Submenu {
     display: none;
     position: absolute;
@@ -24,7 +18,6 @@
     display: flex;
     background-color: #8B8B8B;
     padding: 0.5%;
-    z-index: 9999;
 }
 
 .headerLi {
@@ -51,6 +44,8 @@
 .opcaoHeader{
     text-decoration: none;
     color: #000000;
+    font-family: "Inter", serif;
+    font-size: 18px;
 }
 
 .opcaoHeader:hover{

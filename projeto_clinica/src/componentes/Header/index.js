@@ -57,7 +57,7 @@ export default function Header() {
                         </ul>
                     </li>
                     <li className={styles.headerLi}>
-                        <Link href="#" className={styles.opcaoHeader}>Agaendamento</Link>
+                        <Link href="#" className={styles.opcaoHeader}>Agendamento</Link>
                         <ul className={styles.Submenu}>
                             <li className={styles.headerLi}>
                                <Link href="/agendamentos" className={styles.opcaoHeader}>Listar Consultas</Link>

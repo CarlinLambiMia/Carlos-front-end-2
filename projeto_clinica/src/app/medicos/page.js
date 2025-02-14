@@ -60,7 +60,7 @@ export default function Medicos() {
                     className={styles.botaoPesquisar}
                     onClick={() => setShowListaDePesquisa(!showListaDePesquisa)}
                 >
-                    Búscar médico
+                    Buscar médico 
                 </button>
 
                 {showListaDePesquisa && (
