@@ -1,0 +1,158 @@
+.container {
+    background-color: #D9D9D9;
+    width: 90%;
+    margin: 2% auto;
+    border-radius: 24px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.219) 0px 13px 38px;
+}
+
+.containerPesquisa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1%;
+    padding-left: 18px;
+}
+
+.botaoPesquisar, .botaoPesquisarPaciente {
+    background-color: #666666;
+    color: white;
+    border: none;
+    padding: 1% 2%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabelaContainer {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 2%;
+    color: white;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cabecalho {
+    background-color: black;
+    color: white;
+}
+
+.linhaCabecalho > th {
+    min-width: 50px;
+    text-align: justify;
+    padding: 1%;
+    border: 1px solid #ddd;
+}
+
+.corpoTabela {
+    background-color: #B4B4B4;
+}
+
+.linhaCorpo {
+    text-align: justify;
+}
+
+.linhaCorpo > td {
+    padding: 1%;
+    border: 1px solid white;
+}
+
+.linhaCorpo:hover > td {
+    background-color: rgba(106, 137, 194, 0.22);
+}
+
+.containerInput {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.botaoFechar {
+    background-color: rgb(80, 78, 78);
+    border-radius: 5px;
+    border: none;
+    margin: auto 5px;
+    padding: 2px;
+    color: black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+.iconeFechar {
+    width: 100px;
+    margin: auto;
+}
+
+.containerListaPesquisa {
+    box-sizing: border-box;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100000;
+    overflow: auto;
+    padding: 20px 0;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.containerListaPesquisa::-webkit-scrollbar {
+    background: transparent;
+    width: 0;
+}
+
+.containerInputELista {
+    margin: 1px auto auto;
+    background-color: rgb(247, 247, 247);
+    width: 40%;
+    padding: 1%;
+    border-radius: 20px;
+    z-index: 10000;
+}
+
+.containerLista {
+    display: flex;
+}
+
+.listaPesquisa {
+    list-style-type: none;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.linhaListaPesquisa {
+    width: 100%;
+    padding: 10px 0; 
+    border: none; 
+}
+
+.linhaListaPesquisa:hover {
+    background-color: rgba(0, 0, 0, 0.096); 
+    cursor: pointer;
+}
+
+.input {
+    padding: 2% 1%;
+    border-radius: 10px;
+    border: 1px solid rgb(53, 53, 53);
+    width: 80%;
+}
+
+.h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 2%;
+}

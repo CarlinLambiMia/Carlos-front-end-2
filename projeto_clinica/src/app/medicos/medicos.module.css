@@ -1,4 +1,4 @@
-.container{
+.container {
     background-color: #D9D9D9;
     width: 90%;
     margin: 2% auto;
@@ -7,95 +7,90 @@
     box-shadow: rgba(0, 0, 0, 0.219) 0px 13px 38px;
 }
 
-.h1 {
+.containerPesquisa {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    margin-top: 2%;
-}
-
-.containerPesquisa button{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+    gap: 10px;
     margin: 1%;
-    left: 18px;
+    padding-left: 18px;
 }
 
-.botaoPesquisar{
+.botaoPesquisar, .botaoPesquisarPaciente {
     background-color: #666666;
     color: white;
     border: none;
     padding: 1% 2%;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.tabelaContainer{
+.tabelaContainer {
     width: 100%;
     border-collapse: collapse;
     padding: 2%;
     color: white;
 }
 
-.tabela{
+.tabela {
     width: 100%;
-    border-collapse: collapse; 
+    border-collapse: collapse;
 }
 
-.cabecalho{
+.cabecalho {
     background-color: black;
     color: white;
 }
 
-.linhaCabecalho > th{
+.linhaCabecalho > th {
     min-width: 50px;
     text-align: justify;
     padding: 1%;
     border: 1px solid #ddd;
 }
 
-.corpoTabela{
+.corpoTabela {
     background-color: #B4B4B4;
 }
 
-.linhaCorpo{
+.linhaCorpo {
     text-align: justify;
 }
 
-.linhaCorpo > td{
+.linhaCorpo > td {
     padding: 1%;
     border: 1px solid white;
 }
 
-.linhaCorpo:hover > td{
+.linhaCorpo:hover > td {
     background-color: rgba(106, 137, 194, 0.22);
 }
 
-.containerInput{
+.containerInput {
     display: flex;
     margin-bottom: 10px;
 }
 
-.botaoFechar{
-    background-color: rgb(230, 15, 15);
+.botaoFechar {
+    background-color: rgb(80, 78, 78);
     border-radius: 5px;
     border: none;
     margin: auto 5px;
     padding: 2px;
-    color: white;
+    color: black;
     width: 30px;
     height: 30px;
     display: flex;
 }
 
-.iconeFechar{
-    margin: auto;
+.iconeFechar {
     width: 100px;
+    margin: auto;
 }
 
-.containerListaPesquisa{
+.containerListaPesquisa {
     box-sizing: border-box;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
@@ -114,7 +109,7 @@
     width: 0;
 }
 
-.containerInputELista{
+.containerInputELista {
     margin: 1px auto auto;
     background-color: rgb(247, 247, 247);
     width: 40%;
@@ -123,34 +118,41 @@
     z-index: 10000;
 }
 
-.containerLista{
+.containerLista {
     display: flex;
 }
 
-.listaPesquisa{
+.listaPesquisa {
     list-style-type: none;
-    padding: 10px 0;
+    padding: 0; /* Removido o padding superior e inferior */
     color: rgb(0, 0, 0);
-    margin: auto;
+    margin: 0; /* Removido a margem */
     text-align: center;
     width: 100%;
 }
 
-.linhaListaPesquisa{
+.linhaListaPesquisa {
     width: 100%;
-    padding: 1% auto;
-    border: solid 1px #46464652;
+    padding: 10px 0; /* Ajuste do padding para espaçamento interno */
+    border: none; /* Removido a borda */
 }
 
-.linhaListaPesquisa:hover{
-    padding-left: 2%;
-    background-color: rgba(0, 0, 0, 0.096);
+.linhaListaPesquisa:hover {
+    background-color: rgba(0, 0, 0, 0.096); /* Efeito de hover sem deslocamento */
     cursor: pointer;
 }
 
-.input{
+.input {
     padding: 2% 1%;
     border-radius: 10px;
     border: 1px solid rgb(53, 53, 53);
     width: 80%;
+}
+
+.h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 2%;
 }
