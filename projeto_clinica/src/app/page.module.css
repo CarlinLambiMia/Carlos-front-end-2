@@ -13,3 +13,10 @@
   left: 11%;
   margin-top: 19%;
 }
+
+@media screen and (max-width: 400px) {
+  .campoParagrafo {
+      padding: 10px;
+      font-size: 14px;
+  }
+}

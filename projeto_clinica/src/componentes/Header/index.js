@@ -6,23 +6,21 @@ import Image from "next/image"
 
 export default function Header() {
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <link rel="preconnect" href="https://fonts.googleapis.com"></link>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
             <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"></link>
             <nav className={styles.navegacao}>
-                <div>
-                <Image src={'/images/logo.png'} width={70} height={70} alt="Logo" className={styles.logo}/>
+                <div className={styles.logoContainer}>
+                    <Image src={'/images/logo.png'} width={70} height={70} alt="Logo" className={styles.logo}/>
                 </div>
-            
-            <ul className={styles.headerul}>
-                <li className={styles.headerLi}>
-                    <Link href="/" className={styles.opcaoHeader}>
-                        Home
-                    </Link>
-                </li>
-                <li className={styles.headerLi}>
-
+                <ul className={styles.headerul}>
+                    <li className={styles.headerLi}>
+                        <Link href="/" className={styles.opcaoHeader}>
+                            Home
+                        </Link>
+                    </li>
+                    <li className={styles.headerLi}>
                         <Link href="#" className={styles.opcaoHeader}>Médicos</Link>
                         <ul className={styles.Submenu}>
                             <li className={styles.headerLi}>
@@ -75,6 +73,6 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-        </div>
+        </header>
     )
 }
